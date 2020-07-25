@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../shared/styles/variables.scss';
+@import '../../shared/styles/variables.scss';
     span{
         color:$color
     }

@@ -21,15 +21,6 @@
             </li>
         </ul>
     </div>
-    <div v-if="activitiesArray.length >= limit">
-        <a v-if="showLoadMore" @click="loadMore()" key="down" class="bold">
-            <i class="fas fa-chevron-down" ></i>
-            load more
-        </a>
-        <a v-if="!showLoadMore" @click="loadLess()" key="up" class="bold">
-            <i class="fas fa-chevron-up" ></i>
-            load less
-        </a>
-    </div>
+    <load-more :activities-array="[...activitiesArray]" :show-load-more="true" :limit="10"></load-more>
     <router-view></router-view>
 </div>

@@ -3,6 +3,7 @@
 <script>
 import Activitie from "../Activitie/Activitie.vue";
 import FilterComponent from "../filter/Filter.vue";
+import LoadMore from "../load-more/LoadMore.vue";
 import {dateParser} from "../../shared/helpers/date-parser.helper";
 import {activitiesTypesObj} from "../../shared/helpers/activities-types.constants";
 import axios from "axios";
@@ -10,15 +11,14 @@ export default {
     name:"list",
     components: {
         Activitie,
-        FilterComponent
+        FilterComponent,
+        LoadMore
     },
     data: () => ({
         activities : [],
         months:[],
         filters:[],
-        apiV1 : "http://localhost:3000/activities/v1",
-        showLoadMore : true,
-        limit:10
+        apiV1 : "http://localhost:3000/activities/v1"
     }),
     mounted() {
         this.setFiltersArray();
@@ -44,14 +44,6 @@ export default {
             this.filters = Object.entries(activitiesTypesObj).map(item=>({
                 name:item[0] , display:item[1].display
             }));
-        },
-        loadMore(){
-            this.$store.commit("setLimit" ,  this.$store.getters.getLimit + 10);
-            this.showLoadMore = false;
-        },
-        loadLess(){
-            this.$store.commit("setLimit" ,  this.$store.getters.getLimit - 10);
-            this.showLoadMore = true;
         },
         getActivitiesByMonths(activities){ // set months array according to activities 
             this.setMonthsArray(activities);

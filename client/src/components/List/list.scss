@@ -1,4 +1,4 @@
-@import '../../shared/styles/variables.scss';
+
 .month-wrapper{
     div{
         display: block;
@@ -34,17 +34,6 @@ ul{
     li{
         margin:2rem 1rem;
     }
-}
-a{
-    color:$color;
-    cursor: pointer;
-    font-size:14px;
-    &:hover{
-        text-decoration: none;
-        color:$color;
-       
-    }
-
 }
 .filters-wrapper{
     display: flex;

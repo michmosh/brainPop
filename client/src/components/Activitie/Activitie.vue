@@ -3,7 +3,7 @@
 <script>
 import {activitiesTypesObj} from "../../shared/helpers/activities-types.constants";
 import {dateParser} from "../../shared/helpers/date-parser.helper";
-import Score from "../Score.vue";
+import Score from "../score/Score.vue";
 export default {
     props:{
         activitie: Object
