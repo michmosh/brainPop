@@ -1,0 +1,8 @@
+<div class="name">
+    {{name}}
+    <input v-model="name"/>
+    {{test}}
+    {{this.$props.text}}
+    <div class="card" v-for="(item,index) in this.$props.dataArray" :key="index">{{item}}</div>
+    <button class="btn btn-primary btn-color" @click="testFunction()">click</button>
+</div>

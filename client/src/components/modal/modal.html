@@ -1,0 +1,23 @@
+<transition name="modal" >
+    <div class="modal-mask" v-if="this.$store.getters.isModelOpen">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+          <div class="modal-body">
+            <span class="close-modal" @click="closeModal()">
+              <i class="far fa-times-circle" style="font-size: 2rem;"></i>
+          </span>
+            <div>
+                <img :src="activitieObject.topic_data.icon_path" />
+                <h2 class="capitalize-first">{{activitieObject.topic_data.name}} {{activitieObject.type.display}}</h2>
+                <div>{{activitieObject.d_created | modalDate}}</div>
+                <div>{{activitieObject.comment}}</div>
+                <div v-if="activitieObject.type.settings.score"  class="score">
+                    <Score :score="{score:activitieObject.score , possible_score:activitieObject.possible_score}"/>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+  </transition>

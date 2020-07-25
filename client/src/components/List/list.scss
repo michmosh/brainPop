@@ -1,0 +1,53 @@
+@import '../../shared/styles/variables.scss';
+.month-wrapper{
+    div{
+        display: block;
+        position: relative;
+        height:2rem;
+        margin:0 1rem;
+        span{
+            position: absolute;
+            left:7.5%;
+            background-color:#FCF8E5;
+            border-radius: 50px 50px;
+            padding:0.3rem;
+            width:7rem;
+        }
+    }
+}
+.v-line-under{
+    .position-relative{
+        position: relative;
+        &:after{
+            content: "";
+            background-color: #cccccc;
+            position: absolute;
+            width:1px;
+            height:2rem;
+            display: block;
+            left: 14%;
+        }
+    }
+}
+ul{
+    list-style: none;
+    li{
+        margin:2rem 1rem;
+    }
+}
+a{
+    color:$color;
+    cursor: pointer;
+    font-size:14px;
+    &:hover{
+        text-decoration: none;
+        color:$color;
+       
+    }
+
+}
+.filters-wrapper{
+    display: flex;
+    padding:1rem;
+    justify-content: space-between;
+}

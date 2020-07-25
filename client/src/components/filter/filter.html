@@ -1,0 +1,6 @@
+<div @click="selectFilter()" class="filter btn btn-outline-primary">
+    <span v-if="this.$store.getters.getSelectedName === this.$props.type.name">
+        <i class="fa fa-check-circle"></i>
+    </span>
+    {{this.$props.type.display}}
+</div>

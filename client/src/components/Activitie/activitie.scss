@@ -1,0 +1,58 @@
+@import '../../shared/styles/variables.scss';
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    .image-wrapper{
+        position: relative;
+        .orange{
+            background-color: orange;
+        }
+        .aqua{
+            background-color: aqua;
+        }
+        .circle-wrapper{
+            border-radius: 50%;
+        }
+        img{
+            max-width:3rem;
+        }
+        .badge-yellow{
+            position: absolute;
+            bottom:0px;
+            right:0px;
+            width:15px;
+            height:15px;
+            background-color: gold;
+            font-size:12px;
+            display:flex;
+            justify-content: center;
+        }
+    }
+    
+    .left{
+        display: flex;
+    }
+    .title-wrapper{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding:0 1rem;
+        .title{
+            font-weight: bold;
+        }
+    }
+    .right{
+        color:$color;
+        a{
+            color:$color;
+            text-decoration: none;
+            span{
+                font-size: $font_size;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        
+    }
+}

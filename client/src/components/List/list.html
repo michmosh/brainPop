@@ -1,0 +1,35 @@
+<div>
+    <h2>Timeline</h2>
+    <div class="filters-wrapper">
+        <filter-component v-for="(filter , index) in filters" :key="index" :type="filter"  />
+    </div>
+    <div v-for="month in months">
+        <div class="v-line-under month-wrapper">
+            <div class="position-relative">
+                <div style="min-height: 2rem; margin:0 1rem">
+                    <span>{{month}}</span>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li 
+            v-for="(item , index) in activitiesArray" 
+            v-if="item.month === month" 
+            :key="item.id" class="act-tab" 
+            v-bind:class="[index !== activitiesArray.length - 1 ? 'v-line-under' : '' ]">
+                <div class="position-relative"><Activitie :activitie="item" /></div>
+            </li>
+        </ul>
+    </div>
+    <div v-if="activitiesArray.length >= limit">
+        <a v-if="showLoadMore" @click="loadMore()" key="down" class="bold">
+            <i class="fas fa-chevron-down" ></i>
+            load more
+        </a>
+        <a v-if="!showLoadMore" @click="loadLess()" key="up" class="bold">
+            <i class="fas fa-chevron-up" ></i>
+            load less
+        </a>
+    </div>
+    <router-view></router-view>
+</div>

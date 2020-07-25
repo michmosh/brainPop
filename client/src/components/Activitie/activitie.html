@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body">
+        <div class="left">
+            <div class="image-wrapper">
+                <div class="circle-wrapper" 
+                v-bind:class="[ this.$props.activitie.product === 'bpjr' ? 'orange' : 'aqua' ]">
+                    <img :src="img" />
+                </div>
+                <div class="badge-yellow circle-wrapper" v-if="this.$props.activitie.product === 'bpjr'">Jr.</div>
+            </div>
+            <div class="title-wrapper">
+                <span class="title capitalize-first">{{this.$props.activitie.topic_data.name}}  {{activitieItem.display}}</span>
+                <span>{{this.$props.activitie.d_created | activitieDate}}</span>
+            </div>
+        </div>
+        <div v-if="activitieItem.settings.zoom" class="right">
+            <span v-if="this.$props.activitie.score">
+                <Score :score="{score:this.$props.activitie.score , possible_score:this.$props.activitie.possible_score}"/>
+            </span>
+            <router-link :to="'list/' + this.$props.activitie.id">
+                <span class="bold" >
+                    <i class="fa fa-eye"></i>
+                    View Work
+                </span>
+            </router-link>
+        </div>
+    </div>
+</div>
